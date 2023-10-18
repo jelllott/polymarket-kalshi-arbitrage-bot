@@ -28,3 +28,5 @@ class HeadL1(BasePruner):
     def apply(self, k, v, kept_idx):
         # index along head dim
         return k.index_select(1, kept_idx), v.index_select(1, kept_idx)
+
+# note: index_select on heads dim (1), not seq dim (2)
