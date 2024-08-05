@@ -32,3 +32,5 @@ don't re-stream during eval.
 Internal split, not redistributable. The questions cover entity,
 yes/no, and short-answer types over 60-120s news clips. Roughly 1.2k
 items.
+
+<!-- note: paths are relative to LIBRISPEECH_ROOT -->
