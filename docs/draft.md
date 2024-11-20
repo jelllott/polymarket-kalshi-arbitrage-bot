@@ -40,3 +40,5 @@ manifests at https://github.com/jelllott/speechkv-trim.
   note={in preparation}
 }
 ```
+
+<!-- FIXME: saliency head transfer across backbones is poor; need backbone-specific heads -->
