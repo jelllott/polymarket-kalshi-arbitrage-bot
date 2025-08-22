@@ -47,3 +47,17 @@ def test_no_op_when_seq_le_budget():
     meta = PruneMeta(layer_idx=0, step=0, audio_len=2, text_len=2)
     nk, _ = pr(k, v, None, meta)
     assert nk.shape[2] == 4
+
+
+def test_streaming_anchor_marks_anchors():
+    import torch
+    from speechkv_trim.pruners.streaming_anchor import StreamingAnchor
+    from speechkv_trim.pruners.base import PruneMeta
+    pr = StreamingAnchor(budget=16, anchor_keep=4, window=8)
+    pr.mark_anchor(2)
+    pr.mark_anchor(7)
+    k = torch.randn(1, 2, 32, 8)
+    v = torch.randn(1, 2, 32, 8)
+    meta = PruneMeta(layer_idx=0, step=0, audio_len=20, text_len=12)
+    nk, _ = pr(k, v, None, meta)
+    assert nk.shape[2] == 16
