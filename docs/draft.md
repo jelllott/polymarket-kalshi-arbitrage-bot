@@ -40,9 +40,3 @@ manifests at https://github.com/jelllott/speechkv-trim.
   note={in preparation}
 }
 ```
-
-## Streaming results (preliminary)
-
-LibriSpeech-long, streaming_anchor budget=1024:
-- WER 6.8 (vs 6.2 unpruned)
-- 3.4x cache shrink
